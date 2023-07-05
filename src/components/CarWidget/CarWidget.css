@@ -1,0 +1,15 @@
+.CarWidgetLogo{
+    width: 50px;
+    height: 50px;
+    
+}
+.CarWidgetDiv{
+    display: flex;
+    flex-direction: row;
+    margin-left: 55px;
+    align-items: center;
+    justify-content: center;
+}
+.CarWidgetDiv p{
+    color: black;
+}
