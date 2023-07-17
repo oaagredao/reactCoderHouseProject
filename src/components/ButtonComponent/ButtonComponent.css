@@ -1,0 +1,18 @@
+.button {
+    color: rgb(255, 255, 255);
+    /* Color del texto */
+    padding: 10px 20px;
+    /* Espaciado interno */
+    border: none;
+    /* Borde sin estilo */
+    cursor: pointer;
+    /* Cambio de cursor al pasar el ratón */
+    border-radius: 4px;
+    /* Borde redondeado */
+    font-size: 16px;
+    /* Tamaño de fuente */
+    margin: 5px 5px;
+}
+.button:hover{
+    background-color: #ffffff; /* Color de fondo al pasar el ratón */
+}

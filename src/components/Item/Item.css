@@ -1,0 +1,16 @@
+.card-principalDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 45px 5px;
+    border: 1px solid #000000; 
+    width:30%;
+    height: 290px;
+}
+.card-img img{
+    width: 100px;
+}
+.card-body h4{
+    border-bottom: 20px solid rgb(245, 89, 89);;
+}

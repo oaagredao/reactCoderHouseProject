@@ -1,8 +1,12 @@
+import './ButtonComponent.css'
 export default function ButtonComponent (props){
+  const{label,colorFondo}=props;
+  const styleButton={
+    backgroundColor:colorFondo,
+  }
     return(
       <div>
-        <button>{props.label}</button>
-        <small>Iam a button</small>
+        <button style={styleButton} className='button'>{label}</button>
       </div>
     )
   }

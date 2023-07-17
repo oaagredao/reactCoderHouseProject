@@ -1,0 +1,13 @@
+.divButtonsSumRest{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 2px solid #000000; /* Borde de color #e66430 */
+    border-radius: 4px; /* Borde redondeado */
+    padding: 10px; /* Espaciado interno */
+    background-color: white; /* Color de fondo */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+.div-item_count{
+    max-width: 15%;
+}

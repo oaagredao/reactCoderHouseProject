@@ -10,6 +10,7 @@ import logo from '../../images/logo.PNG';
 import CarWidget from "../CarWidget/CarWidget"
 // import css
 import "./NavbarBootstrap.css"
+import ButtonComponent from '../ButtonComponent/ButtonComponent';
 
 
 function NavbarBootstrap() {
@@ -36,7 +37,8 @@ function NavbarBootstrap() {
                 className="me-2"
                 aria-label="Search"
               />
-              <Button variant="outline-success">Search</Button>
+              <ButtonComponent label='Search' colorFondo='rgb(245, 89, 89)'/>
+              
             </Form>
             <CarWidget/> 
           </Navbar.Collapse>

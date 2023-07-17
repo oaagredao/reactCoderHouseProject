@@ -14,7 +14,7 @@ function App() {
         <NavbarBootstrap/>
       </header>
       <div className='div-body'>
-      <ItemListContainer greetings="Hello, welcome to my page!"/>
+      <ItemListContainer/>
       </div>
     </div>
   );
