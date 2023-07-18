@@ -8,7 +8,7 @@ export default function getData() {
                 id: 1,
                 stock: 10,
                 description: "Pasta de ramen japonesa para preparar deliciosos platos.",
-                img: '../../images/items/fideos-ramen.jpg',
+                img: '../items/fideos-ramen.jpg',
                 price: 150,
             },
             {
@@ -16,7 +16,7 @@ export default function getData() {
                 id: 2,
                 stock: 15,
                 description: "Salsa de soya tradicional japonesa para dar sabor a tus platos.",
-                img: "../../images/items/salsa-soya.jpg",
+                img: "../items/salsa-soya.jpg",
                 price: 50,
             },
             {
@@ -24,7 +24,7 @@ export default function getData() {
                 id: 3,
                 stock: 8,
                 description: "Wasabi auténtico para acompañar sushi y sashimi.",
-                img: "../../images/items/wasabi.jpg",
+                img: "../items/wasabi.jpg",
                 price: 80,
             },
             {
@@ -32,7 +32,7 @@ export default function getData() {
                 id: 4,
                 stock: 12,
                 description: "Fideos udon japoneses para disfrutar en sopas y platos calientes.",
-                img: "../../images/items/udon.JPG",
+                img: "../items/udon.JPG",
                 price: 120,
             },
             {
@@ -40,7 +40,7 @@ export default function getData() {
                 id: 5,
                 stock: 5,
                 description: "Kit para hacer sushi en casa, incluye ingredientes básicos y herramientas.",
-                img: "../../images/items/kit-sushi.jpg",
+                img: "../items/kit-sushi.jpg",
                 price: 200,
             },
             {
@@ -48,7 +48,7 @@ export default function getData() {
                 id: 6,
                 stock: 20,
                 description: "Té verde en polvo utilizado en la tradicional ceremonia del té japonés.",
-                img: "../../images/items/te-verde.jpg",
+                img: "../items/te-verde.jpg",
                 price: 100,
             },
             {
@@ -56,7 +56,7 @@ export default function getData() {
                 id: 7,
                 stock: 18,
                 description: "Sésamo goma tostado para espolvorear en platos japoneses.",
-                img: "../../images/items/sesamo-goma.jpg",
+                img: "../items/sesamo-goma.jpg",
                 price: 70,
             },
             {
@@ -64,7 +64,7 @@ export default function getData() {
                 id: 8,
                 stock: 10,
                 description: "Mezcla para hacer tempura crujiente y ligero.",
-                img: "../../images/items/tempura-mix.JPG",
+                img: "../items/tempura-mix.JPG",
                 price: 90,
             },
             {
@@ -72,7 +72,7 @@ export default function getData() {
                 id: 9,
                 stock: 6,
                 description: "Vino dulce de arroz utilizado en la cocina japonesa para dar sabor.",
-                img: "../../images/items/mirin.jpg",
+                img: "../items/mirin.jpg",
                 price: 60,
             },
             {
@@ -80,7 +80,7 @@ export default function getData() {
                 id: 10,
                 stock: 15,
                 description: "Sake japonés, bebida alcohólica tradicional de arroz.",
-                img: "../../images/items/sake.jpg",
+                img: "../items/sake.jpg",
                 price: 250,
             },
             {
@@ -88,7 +88,7 @@ export default function getData() {
                 id: 11,
                 stock: 9,
                 description: "Fideos soba de trigo sarraceno utilizados en platos fríos y calientes.",
-                img: "../../images/items/soba.jpg",
+                img: "../items/soba.jpg",
                 price: 110,
             },
             {
@@ -96,7 +96,7 @@ export default function getData() {
                 id: 12,
                 stock: 7,
                 description: "Empanadillas de carne y verduras para freír al estilo japonés.",
-                img: "../../images/items/gyoza.jpg",
+                img: "../items/gyoza.jpg",
                 price: 130,
             },
         ];
@@ -109,7 +109,116 @@ export default function getData() {
     })// promise
 }
 
+export function getProductData(){
+    return new Promise((resolve, reject) => {
 
+        const productos = [
+            {
+                title: "Pasta de Ramen",
+                id: 1,
+                stock: 10,
+                description: "Pasta de ramen japonesa para preparar deliciosos platos.",
+                img: '../items/fideos-ramen.jpg',
+                price: 150,
+            },
+            {
+                title: "Salsa de Soya",
+                id: 2,
+                stock: 15,
+                description: "Salsa de soya tradicional japonesa para dar sabor a tus platos.",
+                img: "../items/salsa-soya.jpg",
+                price: 50,
+            },
+            {
+                title: "Wasabi",
+                id: 3,
+                stock: 8,
+                description: "Wasabi auténtico para acompañar sushi y sashimi.",
+                img: "../items/wasabi.jpg",
+                price: 80,
+            },
+            {
+                title: "Fideos Udon",
+                id: 4,
+                stock: 12,
+                description: "Fideos udon japoneses para disfrutar en sopas y platos calientes.",
+                img: "../items/udon.JPG",
+                price: 120,
+            },
+            {
+                title: "Sushi Kit",
+                id: 5,
+                stock: 5,
+                description: "Kit para hacer sushi en casa, incluye ingredientes básicos y herramientas.",
+                img: "../items/kit-sushi.jpg",
+                price: 200,
+            },
+            {
+                title: "Té Verde Matcha",
+                id: 6,
+                stock: 20,
+                description: "Té verde en polvo utilizado en la tradicional ceremonia del té japonés.",
+                img: "../items/te-verde.jpg",
+                price: 100,
+            },
+            {
+                title: "Sésamo Goma",
+                id: 7,
+                stock: 18,
+                description: "Sésamo goma tostado para espolvorear en platos japoneses.",
+                img: "../items/sesamo-goma.jpg",
+                price: 70,
+            },
+            {
+                title: "Tempura Mix",
+                id: 8,
+                stock: 10,
+                description: "Mezcla para hacer tempura crujiente y ligero.",
+                img: "../items/tempura-mix.JPG",
+                price: 90,
+            },
+            {
+                title: "Mirin",
+                id: 9,
+                stock: 6,
+                description: "Vino dulce de arroz utilizado en la cocina japonesa para dar sabor.",
+                img: "../items/mirin.jpg",
+                price: 60,
+            },
+            {
+                title: "Sake",
+                id: 10,
+                stock: 15,
+                description: "Sake japonés, bebida alcohólica tradicional de arroz.",
+                img: "../items/sake.jpg",
+                price: 250,
+            },
+            {
+                title: "Soba",
+                id: 11,
+                stock: 9,
+                description: "Fideos soba de trigo sarraceno utilizados en platos fríos y calientes.",
+                img: "../items/soba.jpg",
+                price: 110,
+            },
+            {
+                title: "Gyoza",
+                id: 12,
+                stock: 7,
+                description: "Empanadillas de carne y verduras para freír al estilo japonés.",
+                img: "../items/gyoza.jpg",
+                price: 130,
+            },
+        ];
+        // funcion que simula el retraso 
+        setTimeout(() => {
+            resolve(productos[1] );},2000);
+
+    })// promise
+
+
+
+}
 
 
 

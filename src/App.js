@@ -5,6 +5,7 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 //css bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavbarBootstrap from './components/NavbarBootstrap/NavbarBootstrap';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 
 function App() {
@@ -15,6 +16,8 @@ function App() {
       </header>
       <div className='div-body'>
       <ItemListContainer/>
+      {/* la etiqueta de abajo es el componente que muestra solo 1 objeto */}
+      {/* <ItemDetailContainer/> */}
       </div>
     </div>
   );
