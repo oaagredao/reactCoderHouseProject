@@ -15,7 +15,12 @@ export default function ItemDetailContainer(){
             // se guarda en una constante la respuesta asincrona y el await es para que espere hasta que la respuesta esté
             const respuesta = await getProductData();
             // luego se actualiza la constante de estado con los nuevos datos que vienen de la funcion asincrona
-            setProduct(respuesta[0]);
+            setProduct(respuesta);
+
+            console.log("Imprimir la const respuesta");
+            console.log(respuesta);
+            console.log("Imprimir el cambio de estado");
+            console.log(product);
         }
         catch (error) {
             console.log('error');

@@ -46,8 +46,6 @@ export default function ItemListContainer(props) {
                     return <Item key={item.id} {...item} />
                 })}
             </div>
-
-            <ItemCount />
         </div>
     )
 }

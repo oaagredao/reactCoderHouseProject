@@ -11,10 +11,32 @@
     border-radius: 8px;
     overflow: hidden;
 }
+.card-img{
+    display: contents;
+}
 .card-img img{
     width: 215px;
     border-radius: 10px;
 }
+.card-body{
+    flex: 1 1 auto;
+    padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+    color: var(--bs-card-color);
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.card-body p{
+    width: 90%;
+    text-align: center;
+}
 .card-body h4{
-    border-bottom: 20px solid rgb(245, 89, 89);;
+    display: flex;
+    border-bottom: 20px solid rgb(245, 89, 89);
+    width: 100%;
+    align-content: center;
+    flex-wrap: nowrap;
+    justify-content: center;
 }

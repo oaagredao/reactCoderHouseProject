@@ -13,6 +13,7 @@ import "./NavbarBootstrap.css"
 import ButtonComponent from '../ButtonComponent/ButtonComponent';
 
 
+
 function NavbarBootstrap() {
     return (
       <Navbar expand="lg" className="bg-body-tertiary">
@@ -25,9 +26,9 @@ function NavbarBootstrap() {
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
-              <Nav.Link href="#action1">Home</Nav.Link>
-              <Nav.Link href="#action2">Products</Nav.Link>
-              <Nav.Link href="#action3">Sale</Nav.Link>
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/">Products</Nav.Link>
+              <Nav.Link href="/product">Sale</Nav.Link>
               <Nav.Link href="#action4">Contact us</Nav.Link>
             </Nav>
             <Form className="d-flex">
