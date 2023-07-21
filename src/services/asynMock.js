@@ -226,14 +226,13 @@ export function getProductData(id) {
 
     // vamos a buscar dentro del array de objetos un objeto que conicida con la propiedad 
     // nombre_producto_mostrar
-    console.log(id);
-    console.log(productos.find((item)=>item.id===parseInt(id)));
+    const productRequested=productos.find((item)=>item.id===parseInt(id));
 
-    /*
+    
     // funcion que simula el retraso
     setTimeout(() => {
       resolve(productRequested);
     }, 500); // Aquí he añadido un tiempo de espera de 1000 ms (1 segundo) para simular el retraso.
-    */
+    
   }); // promise
 }

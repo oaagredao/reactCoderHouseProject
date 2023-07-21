@@ -1,0 +1,10 @@
+.div_Item_Detail_Container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5%;
+}
+.div-img img{
+    border-radius: 10px;
+}

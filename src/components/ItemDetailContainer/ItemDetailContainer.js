@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import {getProductData} from "../../services/asynMock";
 import ItemCount from '../ItemCount/ItemCount';
 import { useParams } from 'react-router-dom';
+import "./ItemDetailContainer.css"
 
 export default function ItemDetailContainer(){
 
@@ -41,22 +42,22 @@ export default function ItemDetailContainer(){
     // el array vacio hace que se ejecute una sola vez
 
     useEffect(() => {
-        obtenerDato();
+        obtenerDato(id);
     }, [])
 
     return (
-        <div >
-            <div>
+        <div className='div_Item_Detail_Container' >
+            <div className='div-img'>
             <img src={product.img} alt={product.title}></img>
             </div>
-            <div>
+            <div className='div-title'>
                 <h2>{product.title}</h2>
             </div>
-            <div>
+            <div className='div-detailContainer-body'>
                 <h4>El precio es ${product.price}</h4>
                 <p>{product.description}</p>
             </div>
-        <ItemCount/>
+            <ItemCount/>
         </div>
     )
 
