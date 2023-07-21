@@ -1,8 +1,9 @@
 import './Item.css'
 import ButtonComponent from '../ButtonComponent/ButtonComponent'
+import { Link } from 'react-router-dom';
 
 export default function Item(props){
-    const {title,description,img,price}=props;
+    const {title,description,img,price,id}=props;
     return(
         <div className='card-principalDiv'>
             <div className='card-header'>
@@ -15,7 +16,9 @@ export default function Item(props){
                 <h4>The price is: {price}</h4>
                 <p >{description}</p>
             </div>
+            <Link to={`/product/${id}`}>
             <ButtonComponent label='Ver producto' colorFondo='#e66430'/>
+            </Link>
         </div>
     )
 

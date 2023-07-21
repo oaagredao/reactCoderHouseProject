@@ -115,7 +115,7 @@ export default function getData() {
   }); // promise
 }
 
-export function getProductData() {
+export function getProductData(id) {
   return new Promise((resolve, reject) => {
     const productos = [
       {
@@ -223,9 +223,17 @@ export function getProductData() {
         price: 130,
       },
     ];
+
+    // vamos a buscar dentro del array de objetos un objeto que conicida con la propiedad 
+    // nombre_producto_mostrar
+    console.log(id);
+    console.log(productos.find((item)=>item.id===parseInt(id)));
+
+    /*
     // funcion que simula el retraso
     setTimeout(() => {
-      resolve(productos[1]);
+      resolve(productRequested);
     }, 500); // Aquí he añadido un tiempo de espera de 1000 ms (1 segundo) para simular el retraso.
+    */
   }); // promise
 }

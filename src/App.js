@@ -17,7 +17,10 @@ function App() {
       <div className='div-body'>
       <Routes>
         <Route path='/' element={<ItemListContainer/>}/>
-        <Route path='/product' element={<ItemDetailContainer/>}/>
+        {/*Ruta con segmento ullr dinamico*/}
+        <Route path='/product/:id' element={<ItemDetailContainer/>}/>
+
+
         <Route path='/*' element={<h1>Page not found: error </h1>}/>
       </Routes>
       </div>
