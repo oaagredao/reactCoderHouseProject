@@ -11,13 +11,15 @@ import './ItemListContainer.css'
 // importamos la funcion que manda el producto por categoria
 import{getProductCategory} from "../../services/asynMock";
 
+
+
 export default function ItemListContainer(props) {
     // traer los datos simulando una extraccion asincrona
     // se guardan los datos y se actualiza en una variable de estado
 
     // crear la variable de estado
     // el estado de base se define como un array vacio, osea la constante productos inicial es un array vacio
-    const [products, setProducts] = useState([false]);
+    const [products, setProducts] = useState([]);
 
     // vamos a llamar a UseParams para atrapar el valor variable de la url de los productos
     const {categoryId}=useParams();
@@ -37,7 +39,9 @@ export default function ItemListContainer(props) {
    
     return (
         <div className="item-list-principal-div">
-            <h1>Listado de productos</h1>
+            {/*agregamos una condicion ternaria para cambiar el valor del h1 dependiendo del category ID*/}
+            {categoryId ? <h1> Categoría tipo: {categoryId}</h1> : <h1>Listado de productos</h1> }
+            
             <div className="contenedor-principal">
                 {products.map((item) => {
                     return <Item key={item.id} {...item} />
