@@ -12,7 +12,6 @@ export default function ItemDetailContainer(){
 
     // vamos a llamar a UseParams para atrapar el valor variable de la url de los productos
     const {id}=useParams();
-    console.log(useParams());
 
     
     // funcion asincrona que obtiene los datos con retraso

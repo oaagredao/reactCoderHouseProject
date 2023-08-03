@@ -1,4 +1,3 @@
-import ItemCount from "../ItemCount/ItemCount";
 // here is the representation of the backend response
 //impor the data of products
 import '../../services/asynMock';
@@ -8,6 +7,8 @@ import getData from "../../services/asynMock";
 import Item from "../Item/Item";
 // css
 import './ItemListContainer.css'
+// importamos la funcion que manda el producto por categoria
+
 
 
 export default function ItemListContainer(props) {

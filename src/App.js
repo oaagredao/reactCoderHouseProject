@@ -19,7 +19,7 @@ function App() {
         <Route path='/' element={<ItemListContainer/>}/>
         {/*Ruta con segmento ullr dinamico*/}
         <Route path='/product/:id' element={<ItemDetailContainer/>}/>
-
+        <Route path='/category/:categoryId' element={<ItemListContainer/>}/>
 
         <Route path='/*' element={<h1>Page not found: error </h1>}/>
       </Routes>
