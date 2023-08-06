@@ -3,12 +3,17 @@ import {getProductData} from "../../services/asynMock";
 import ItemCount from '../ItemCount/ItemCount';
 import { useParams } from 'react-router-dom';
 import "./ItemDetailContainer.css"
+// import loader
+// loader
+import { DotPulse } from "@uiball/loaders";
 
 export default function ItemDetailContainer(){
 
      // crear la variable de estado
     // el estado de base se define como un array vacio, osea la constante productos inicial es un array vacio
     const [product, setProduct] = useState({});
+    // creo un estado para cargando
+    const [isLoading, setIsLoading]=useState(true);
 
     // vamos a llamar a UseParams para atrapar el valor variable de la url de los productos
     const {id}=useParams();
@@ -21,12 +26,15 @@ export default function ItemDetailContainer(){
             const respuesta = await getProductData(id);
             // luego se actualiza la constante de estado con los nuevos datos que vienen de la funcion asincrona
             setProduct(respuesta);
+            setIsLoading(false);
 
+            /*
            //////////////////////////// control///////////////////////////////
             console.log("Imprimir la const respuesta");
             console.log(respuesta);
             console.log("Imprimir el cambio de estado");
             console.log(product);
+            */
         }
         catch (error) {
             console.log('error');
@@ -44,20 +52,29 @@ export default function ItemDetailContainer(){
         obtenerDato(id);
     }, [])
 
-    return (
-        <div className='div_Item_Detail_Container' >
-            <div className='div-img'>
-            <img src={product.img} alt={product.title}></img>
+    if(isLoading){
+        return(
+            <DotPulse size={60} speed={1.3} color="black" />
+        )
+    }
+    else{
+        return (
+            <div className='div_Item_Detail_Container' >
+                <div className='div-img'>
+                <img src={product.img} alt={product.title}></img>
+                </div>
+                <div className='div-title'>
+                    <h2>{product.title}</h2>
+                </div>
+                <div className='div-detailContainer-body'>
+                    <h4>El precio es ${product.price}</h4>
+                    <p>{product.description}</p>
+                </div>
+                <ItemCount/>
             </div>
-            <div className='div-title'>
-                <h2>{product.title}</h2>
-            </div>
-            <div className='div-detailContainer-body'>
-                <h4>El precio es ${product.price}</h4>
-                <p>{product.description}</p>
-            </div>
-            <ItemCount/>
-        </div>
-    )
+        )
+    }
+
+    
 
 }// funcion detail container

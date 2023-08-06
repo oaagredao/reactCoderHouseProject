@@ -123,7 +123,7 @@ export default function getData() {
     setTimeout(() => {
       const date = new Date().toLocaleDateString;
       resolve(productos);
-    }, 500);
+    }, 1000);
   }); // promise
 }
 
@@ -135,7 +135,7 @@ export function getProductData(id) {
     // funcion que simula el retraso
     setTimeout(() => {
       resolve(productRequested);
-    }, 500); // Aquí he añadido un tiempo de espera de 1000 ms (1 segundo) para simular el retraso.
+    }, 1000); // Aquí he añadido un tiempo de espera de 1000 ms (1 segundo) para simular el retraso.
     
   }); // promise
 }
@@ -149,7 +149,7 @@ export function getProductCategory(categoryId) {
     // funcion que simula el retraso
     setTimeout(() => {
       resolve(productRequested);
-    }, 500); // Aquí he añadido un tiempo de espera de 1000 ms (1 segundo) para simular el retraso.
+    }, 1000); // Aquí he añadido un tiempo de espera de 1000 ms (1 segundo) para simular el retraso.
     
   }); // promise
 }

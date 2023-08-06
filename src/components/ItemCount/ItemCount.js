@@ -7,6 +7,7 @@ export default function ItemCount() {
     const [clicks, setClicks] = useState(0)
     // countint plus state
     function ClickPlusCounter() {
+        console.log('Clicked Plus Button');
         setClicks(prevClicks=>prevClicks + 1);
     }
     //  countint less clicks function
@@ -15,6 +16,9 @@ export default function ItemCount() {
             setClicks(prevClicks=> prevClicks - 1);
         }
     }
+    console.log("Imprime los clicks");
+    console.log(clicks);
+
     return (
         <div className='div-item_count'>
             <div className='divButtonsSumRest'>
