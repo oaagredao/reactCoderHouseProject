@@ -2,7 +2,7 @@ import ButtonComponent from '../ButtonComponent/ButtonComponent'
 import './ItemCount.css'
 import { useState } from 'react';
 
-export default function ItemCount() {
+export default function ItemCount({onConfirm}) {
     // functions that work for counting buttons
     const [clicks, setClicks] = useState(0)
     // countint plus state
@@ -27,6 +27,7 @@ export default function ItemCount() {
                 <ButtonComponent onClick={ClickPlusCounter} colorFondo='#e66430' label='+' />
             </div>
             <ButtonComponent colorFondo='#e66430' label='Haz click para agregar' />
+            <ButtonComponent onClick={() => onConfirm(clicks)} colorFondo='#e66430' label='Haz click para agregar' />
         </div>
     )
 }
