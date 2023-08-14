@@ -42,7 +42,7 @@ export default function CartContainer() {
       <div>
         <h1 className="cart-title">Tu carrito</h1>
         {cart.map((item) => (
-          <div key={item.id}>
+          <div key={item.id} className="div-articulosCarrito">
             <h1>{item.title}</h1>
             <p>Precio unitario: {item.price} $</p>
             <p> Cantidad a comprar: {item.count} unidades</p>
@@ -54,11 +54,13 @@ export default function CartContainer() {
             />
           </div>
         ))}
+        <div className="div-botonComprar">
         <ButtonComponent
           onClick={handleCheckOut}
           colorFondo="rgb(245, 89, 89)"
           label="Comprar"
         />
+        </div>
       </div>
     );
   }

@@ -95,7 +95,9 @@ export default function ItemDetailContainer() {
               <ButtonComponent colorFondo='#e66430' label='Ir al carrito'></ButtonComponent>
             </Link>
           ) : (
-            <ItemCount stock={maxItems} onConfirm={handleAddToCart} />
+            <div className="div-itemCount">
+              <ItemCount stock={maxItems} onConfirm={handleAddToCart} />
+            </div>
           )
         ) : (
           // END si tenemos stock
@@ -104,9 +106,11 @@ export default function ItemDetailContainer() {
         {itemInCart > 0 && (
           <h2>Ya agregaste {itemInCart} unidades de este producto</h2>
         )}
+        <div className="div-botonVolverInicio">
         <Link to="/">
-          <ButtonComponent colorFondo='#e66430' label='Volver al Inicio'></ButtonComponent>
+          <ButtonComponent colorFondo='rgb(245, 89, 89)' label='Volver al Inicio'></ButtonComponent>
         </Link>
+        </div>
       </div>
     );
   }
