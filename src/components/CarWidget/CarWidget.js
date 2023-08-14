@@ -1,17 +1,24 @@
-import "./CarWidget.css"
-import shopingCartLogo from "../../images/shopping-cart.png"
+import "./CarWidget.css";
+import shopingCartLogo from "../../images/shopping-cart.png";
+import { Link } from "react-router-dom";
 // context
-import { useContext } from "react"
-import { cartContext } from "../../App"
+import { useContext } from "react";
+import { cartContext } from "../../context/cartContext";
 
-export default function CarWidget(){
-    const context = useContext(cartContext);
-    console.log(context);
+export default function CarWidget() {
+  const { getTotalItemsInCart } = useContext(cartContext);
 
-return(
+  return (
     <div className="CarWidgetDiv">
-        <img className="CarWidgetLogo" src={shopingCartLogo} alt="cartlogo"></img>
-        <p>{context.cart.length}</p>
+      <Link to="/cart">
+        <img
+          className="CarWidgetLogo"
+          src={shopingCartLogo}
+          alt="cartlogo"
+        ></img>
+      </Link>
+
+      <p>{getTotalItemsInCart()}</p>
     </div>
-)
+  );
 }

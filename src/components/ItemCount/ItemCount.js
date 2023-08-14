@@ -16,9 +16,6 @@ export default function ItemCount({onConfirm}) {
             setClicks(prevClicks=> prevClicks - 1);
         }
     }
-    console.log("Imprime los clicks");
-    console.log(clicks);
-
     return (
         <div className='div-item_count'>
             <div className='divButtonsSumRest'>
@@ -26,7 +23,6 @@ export default function ItemCount({onConfirm}) {
                 <h3> {clicks}</h3>
                 <ButtonComponent onClick={ClickPlusCounter} colorFondo='#e66430' label='+' />
             </div>
-            <ButtonComponent colorFondo='#e66430' label='Haz click para agregar' />
             <ButtonComponent onClick={() => onConfirm(clicks)} colorFondo='#e66430' label='Haz click para agregar' />
         </div>
     )

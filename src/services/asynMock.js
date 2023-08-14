@@ -153,3 +153,4 @@ export function getProductCategory(categoryId) {
     
   }); // promise
 }
+

@@ -3,13 +3,13 @@
 import "../../services/asynMock";
 // import the hooks
 import { useState, useEffect } from "react";
-import getData from "../../services/asynMock";
+import { getData } from "../../services/firebase";
 import { useParams } from "react-router-dom";
 import Item from "../Item/Item";
 // css
 import "./ItemListContainer.css";
 // importamos la funcion que manda el producto por categoria
-import { getProductCategory } from "../../services/asynMock";
+import { getProductCategory } from "../../services/firebase";
 // loader
 import { DotPulse } from "@uiball/loaders";
 

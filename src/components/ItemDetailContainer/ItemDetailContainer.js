@@ -1,15 +1,14 @@
 import { useState, useEffect, useContext } from "react";
 import ButtonComponent from "../ButtonComponent/ButtonComponent";
-import { getProductData } from "../../services/asynMock";
+import { getProductData } from "../../services/firebase";
 import ItemCount from "../ItemCount/ItemCount";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./ItemDetailContainer.css";
-// import loader
-// loader
 import { DotPulse } from "@uiball/loaders";
 // cart context
-import { cartContext } from "../../App";
+import { cartContext } from "../../context/cartContext";
+import Swal from "sweetalert2";
 
 export default function ItemDetailContainer() {
   // crear la variable de estado
@@ -25,14 +24,12 @@ export default function ItemDetailContainer() {
   const { id } = useParams();
 
   // conectarse al cart context
-  const { addToCart, getItemInCart } = useContext(cartContext);
+  const { addToCart, getItemQuantity } = useContext(cartContext);
 
   // itemCart
-  const itemInCart = getItemInCart(id);
+  const itemInCart = getItemQuantity(product);
 
-  const maxItems = itemInCart
-    ? product.stock - itemInCart.count
-    : product.stock;
+  const maxItems = product.stock - itemInCart;
 
   // funcion asincrona que obtiene los datos con retraso
   async function obtenerDato(id) {
@@ -67,7 +64,10 @@ export default function ItemDetailContainer() {
   // funcion para agregar al carrito
   function handleAddToCart(clicks) {
     addToCart(product, clicks);
-    alert(`Producto agregado al carrito, cantidad: ${clicks}`);
+    Swal.fire(
+      `Producto agregado al carrito, cantidad:`,
+      `${clicks}`
+    )
     setIsAddedToCart(true);
   }
 
@@ -91,7 +91,9 @@ export default function ItemDetailContainer() {
         {product.stock > 0 ? (
           /* Si tenemos STOCK */
           isAddedToCart ? (
-            <a href="/cart">Ir al carrito</a>
+            <Link to="/cart">
+              <ButtonComponent colorFondo='#e66430' label='Ir al carrito'></ButtonComponent>
+            </Link>
           ) : (
             <ItemCount stock={maxItems} onConfirm={handleAddToCart} />
           )
@@ -99,13 +101,13 @@ export default function ItemDetailContainer() {
           // END si tenemos stock
           <p>No hay stock disponible</p>
         )}
-        {itemInCart && (
-          <h2>Ya agregaste {itemInCart.count} unidades de este producto</h2>
+        {itemInCart > 0 && (
+          <h2>Ya agregaste {itemInCart} unidades de este producto</h2>
         )}
         <Link to="/">
-          <ButtonComponent>Volver al inicio</ButtonComponent>
+          <ButtonComponent colorFondo='#e66430' label='Volver al Inicio'></ButtonComponent>
         </Link>
       </div>
     );
   }
-} // funcion detail container
+}

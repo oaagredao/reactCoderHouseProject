@@ -56,6 +56,16 @@ function CartContextProvider(props) {
     });
     return total;
   }
+  
+  const getItemQuantity = (item) =>{
+    let data= getItemInCart(item.id)
+     if(getItemInCart(item.id)){
+      return data.count
+     }else{
+      return 0
+     }
+    }
+  
 
   return (
     <cartContext.Provider
@@ -68,6 +78,7 @@ function CartContextProvider(props) {
         clearCart,
         getTotalItemsInCart,
         getTotalPriceInCart,
+        getItemQuantity,
       }}
     >
       {props.children}
